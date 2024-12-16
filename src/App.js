@@ -85,12 +85,10 @@ export default function Game(){
       const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
       setHistory(nextHistory);
       setCurrentMove(nextHistory.length - 1);
-      setXIsNext(!xIsNext);
   }
 
   function jumpTo(step){
     setCurrentMove(step);
-    setXIsNext(step % 2 === 0);
   }
 
   const moves = history.map((step, move) => {
